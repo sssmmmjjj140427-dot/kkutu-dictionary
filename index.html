@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>끝말잇기 사전</title>
+
+<style>
+body{
+    margin:0;
+    font-family:"Malgun Gothic",sans-serif;
+    background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    width:360px;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    margin:10px 0;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+#sin{
+    background:#4CAF50;
+}
+
+#gu{
+    background:#2196F3;
+}
+
+#naver{
+    background:#03C75A;
+}
+
+#kkutu{
+    background:#FF9800;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#777;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>📚 끝말잇기 사전</h1>
+
+    <button id="sin"
+    onclick="location.href='https://stdict.korean.go.kr/'">
+    🟩 신엜 (표준국어대사전)
+    </button>
+
+    <button id="gu"
+    onclick="location.href='https://opendict.korean.go.kr/'">
+    🟦 구엜 (우리말샘)
+    </button>
+
+    <button id="naver"
+    onclick="location.href='https://ko.dict.naver.com/'">
+    🟢 넶룰 (네이버 국어사전)
+    </button>
+
+    <button id="kkutu"
+    onclick="location.href='https://kkutu.lightstudio.kr/'">
+    🟧 끄투사전
+    </button>
+
+    <div class="footer">
+        Made by 만두
+    </div>
+</div>
+
+</body>
+</html>
