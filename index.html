@@ -3,15 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <title>끝말잇기 사전</title>
+
+<style>
+body{
+    margin:0;
+    font-family: "Malgun Gothic", sans-serif;
+    background:#f2f4ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    width:90%;
+    max-width:400px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:22px;
+    margin:12px 0;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+/* 버튼 색상 */
+#sin{
+    background:#4CAF50;
+    color:white;
+}
+
+#gu{
+    background:#2196F3;
+    color:white;
+}
+
+#naver{
+    background:#03C75A;
+    color:white;
+}
+
+#kkutu{
+    background:#FF9800;
+    color:white;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>끝말잇기 사전</h1>
+<div class="box">
+    <h1>📚 끝말잇기 사전</h1>
 
-<button onclick="location.href='https://stdict.korean.go.kr/'">표준국어대사전</button>
-<button onclick="location.href='https://opendict.korean.go.kr/'">우리말샘</button>
-<button onclick="location.href='https://ko.dict.naver.com/'">네이버국어사전</button>
-<button onclick="location.href='https://kkutu.lightstudio.kr/'">끄투사전</button>
+    <button id="sin" onclick="location.href='https://stdict.korean.go.kr/'">
+        신엜 (표준국어대사전)
+    </button>
+
+    <button id="gu" onclick="location.href='https://opendict.korean.go.kr/'">
+        구엜 (우리말샘)
+    </button>
+
+    <button id="naver" onclick="location.href='https://ko.dict.naver.com/'">
+        넶룰 (네이버 국어사전)
+    </button>
+
+    <button id="kkutu" onclick="location.href='https://kkutu.lightstudio.kr/'">
+        끄투 (끄투사전)
+    </button>
+
+</div>
 
 </body>
 </html>
