@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>끝말잇기 사전</title>
+<style>
+body{margin:0;background:#eef2ff;font-family:Arial,sans-serif}
+.container{max-width:520px;margin:20px auto;padding:16px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+h1{text-align:center}
+button{width:100%;padding:18px;margin:8px 0;border:none;border-radius:12px;font-size:20px;font-weight:bold;cursor:pointer}
+.green{background:#4CAF50;color:#fff}.blue{background:#2196F3;color:#fff}.naver{background:#03C75A;color:#fff}.orange{background:#FF9800;color:#fff}.purple{background:#6f42c1;color:#fff}.gray{background:#f3f3f3}
+#rulePanel{display:none}.info{margin-top:15px;padding:15px;background:#f8f8f8;border-radius:10px}
+</style></head>
+<body><div class="container"><div class="card">
+<h1>📚 끝말잇기 사전</h1>
+<button class="green" onclick="location.href='https://stdict.korean.go.kr/'">신엜</button>
+<button class="blue" onclick="location.href='https://opendict.korean.go.kr/'">구엜</button>
+<button class="naver" onclick="location.href='https://ko.dict.naver.com/'">넶룰</button>
+<button class="orange" onclick="location.href='https://kkutu.lightstudio.kr/'">끄투사전</button>
+<button class="purple" onclick="document.getElementById('rulePanel').style.display='block'">📖 룰 설명</button>
+<div id="rulePanel">
+<button class="gray" onclick="showRule('신엜','표준국어대사전을 기준으로 하는 룰.','https://stdict.korean.go.kr/')">신엜</button>
+<button class="gray" onclick="showRule('구엜','개정 전 표준국어대사전을 기준으로 하는 룰.','https://opendict.korean.go.kr/')">구엜</button>
+<button class="gray" onclick="showRule('넶룰','네이버 오픈사전을 기준으로 하는 룰.','https://ko.dict.naver.com/')">넶룰</button>
+<button class="gray" onclick="showRule('끄투','어인정(어거지인정)으로 거의 모든 단어, 장문이 가능한 룰.','https://kkutu.lightstudio.kr/')">끄투</button>
+<button class="gray" onclick="showRule('쿵쿵따','3글자로만 가능한 룰.','')">쿵쿵따</button>
+<button class="gray" onclick="showRule('천도룰','신엜을 기준으로 하는 쿵쿵따에서 띄어쓰기를 허용한 룰.','')">천도룰</button>
+<button class="gray" onclick="showRule('~엜?','엘소드에서 유행한 끝말잇기 룰을 줄여 부르는 것.','')">~엜?</button>
+<div class="info">
+<h3 id="rtitle">룰을 선택하세요</h3>
+<p id="rdesc">버튼을 누르면 설명이 표시됩니다.</p>
+<button id="goto" class="purple" style="display:none">관련 사전 바로가기</button>
+</div></div></div></div>
+<script>
+function showRule(t,d,l){
+document.getElementById('rtitle').textContent=t;
+document.getElementById('rdesc').textContent=d;
+const b=document.getElementById('goto');
+if(l){b.style.display='block';b.onclick=()=>location.href=l;}
+else{b.style.display='none';}
+}
+</script></body></html>
