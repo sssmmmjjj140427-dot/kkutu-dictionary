@@ -2,95 +2,61 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>끝말잇기 사전</title>
-
 <style>
-body{
-    margin:0;
-    font-family: "Malgun Gothic", sans-serif;
-    background:#f2f4ff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-
-.box{
-    width:90%;
-    max-width:400px;
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-    text-align:center;
-}
-
-h1{
-    margin-bottom:20px;
-}
-
-button{
-    width:100%;
-    padding:22px;
-    margin:12px 0;
-    font-size:20px;
-    font-weight:bold;
-    border:none;
-    border-radius:15px;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-button:hover{
-    transform:scale(1.03);
-}
-
-/* 버튼 색상 */
-#sin{
-    background:#4CAF50;
-    color:white;
-}
-
-#gu{
-    background:#2196F3;
-    color:white;
-}
-
-#naver{
-    background:#03C75A;
-    color:white;
-}
-
-#kkutu{
-    background:#FF9800;
-    color:white;
-}
-
+body{margin:0;font-family:Arial,sans-serif;background:#eef2ff}
+.wrap{max-width:520px;margin:25px auto;padding:20px}
+.card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+h1{text-align:center}
+button{width:100%;padding:18px;margin:8px 0;font-size:19px;font-weight:bold;border:none;border-radius:12px;cursor:pointer}
+#s{background:#4caf50;color:#fff}#g{background:#2196f3;color:#fff}
+#n{background:#03c75a;color:#fff}#k{background:#ff9800;color:#fff}
+#rule{background:#6a5acd;color:#fff}
+.rules{display:none;margin-top:15px}
+.small{background:#f1f1f1;color:#222}
+.info{margin-top:15px;padding:15px;border-radius:12px;background:#f7f7f7;min-height:90px}
 </style>
+<script>
+function openRules(){
+ document.getElementById("rules").style.display="block";
+}
+function showRule(t,d,l){
+ document.getElementById("title").innerText=t;
+ document.getElementById("desc").innerText=d;
+ document.getElementById("go").onclick=function(){location.href=l;}
+ document.getElementById("go").style.display=l?"block":"none";
+}
+</script>
 </head>
-
 <body>
+<div class="wrap">
+<div class="card">
+<h1>📚 끝말잇기 사전</h1>
 
-<div class="box">
-    <h1>📚 끝말잇기 사전</h1>
+<button id="s" onclick="location.href='https://stdict.korean.go.kr/'">신엜</button>
+<button id="g" onclick="location.href='https://opendict.korean.go.kr/'">구엜</button>
+<button id="n" onclick="location.href='https://ko.dict.naver.com/'">넶룰</button>
+<button id="k" onclick="location.href='https://kkutu.lightstudio.kr/'">끄투사전</button>
 
-    <button id="sin" onclick="location.href='https://stdict.korean.go.kr/'">
-        신엜 (표준국어대사전)
-    </button>
+<button id="rule" onclick="openRules()">📖 룰 설명</button>
 
-    <button id="gu" onclick="location.href='https://opendict.korean.go.kr/'">
-        구엜 (우리말샘)
-    </button>
+<div id="rules" class="rules">
+<button class="small" onclick="showRule('신엜','표준국어대사전을 기준으로 하는 룰.','https://stdict.korean.go.kr/')">신엜</button>
+<button class="small" onclick="showRule('구엜','개정 전 표준국어대사전을 기준으로 하는 룰.','https://opendict.korean.go.kr/')">구엜</button>
+<button class="small" onclick="showRule('넶룰','네이버 오픈사전을 기준으로 하는 룰.','https://ko.dict.naver.com/')">넶룰</button>
+<button class="small" onclick="showRule('끄투','어인정(어거지인정)으로 거의 모든 단어와 장문이 가능한 룰.','https://kkutu.lightstudio.kr/')">끄투</button>
+<button class="small" onclick="showRule('쿵쿵따','3글자로만 가능한 룰.','')">쿵쿵따</button>
+<button class="small" onclick="showRule('천도룰','신엜을 기준으로 하는 쿵쿵따에서 띄어쓰기를 허용한 룰.','')">천도룰</button>
+<button class="small" onclick="showRule('~엜?','엘소드에서 유행한 끝말잇기 룰을 줄여 부르는 것.','')">~엜?</button>
 
-    <button id="naver" onclick="location.href='https://ko.dict.naver.com/'">
-        넶룰 (네이버 국어사전)
-    </button>
-
-    <button id="kkutu" onclick="location.href='https://kkutu.lightstudio.kr/'">
-        끄투 (끄투사전)
-    </button>
-
+<div class="info">
+<h3 id="title">룰을 선택하세요</h3>
+<p id="desc">위 버튼을 누르면 설명이 표시됩니다.</p>
+<button id="go" style="display:none;background:#444;color:#fff;">관련 사전 바로가기</button>
 </div>
-
+</div>
+</div>
+</div>
 </body>
 </html>
